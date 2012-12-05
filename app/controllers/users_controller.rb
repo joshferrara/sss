@@ -15,13 +15,13 @@ class UsersController < ApplicationController
   end
 
   def match
-    ids = User.all.collect{|u| u.id}
+    ids = User.where(rsvp: true).collect{|u| u.id}
 
     User.all.each do |user|
       user.update_attribute(:user, nil)
     end
 
-    User.all.each do |user|
+    User.where(rsvp: true).each do |user|
       user.user = nil
       ids = ids - [user.id]
       user_id = ids.sample
