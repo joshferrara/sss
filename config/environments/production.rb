@@ -20,6 +20,17 @@ Sss::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
+  # mail stuff
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address              => "smtp.gmail.com",
+    :port                 => 587,
+    :domain               => 'gmail.com',
+    :user_name            => 'josh@hivemindlabs.com',
+    :password             => 'itsbob89',
+    :authentication       => 'plain',
+    :enable_starttls_auto => true  }
+
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
 
