@@ -43,6 +43,8 @@
             new_user_path,
             :class => 'btn btn-primary' %>
 
+<%= link_to "Invite Santas", invite_users_path, class: "btn" %>
+
 <%= link_to "Match Santas", match_path, class: "btn" %>
 
-<%= link_to "Email Matches", email_match_path, class: "btn" %>
+<%= link_to "Email Matches", send_matches_path, class: "btn" %>

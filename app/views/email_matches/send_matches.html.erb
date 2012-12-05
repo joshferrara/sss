@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Greetings, <%= @user.first_name %></h1>
+    <p>
+      A secret santa match has been automatically selected for you. This year, you will be selecting a gift for:
+    </p>
+    <p>
+      <strong><%= @user.user.first_name + " " + @user.user.last_name %></strong>
+    </p>
+    <p>
+      Don't forget, the annual gathering of the Secret Santa Society is Saturday, December 15th at LOCATION_GOES_HERE. You have approximately one week to find the perfect gift.
+    </p>
+    <p>— Josh Ferrara &amp; the S3</p>
+  </body>
+</html>

@@ -1,10 +1,11 @@
 Sss::Application.routes.draw do
   resources :users
 
+  match 'invite_users' => 'users#invite_users'
   match 'rsvp' => 'users#rsvp'
   match 'confirm_rsvp' => 'users#confirm_rsvp'
   match 'match' => 'users#match'
-  match 'email_match' => 'users#email_match'
+  match 'send_matches' => 'users#send_matches'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,13 +1,23 @@
 class UsersController < ApplicationController
 
-  def rsvp
+  def invite_users
+    User.all.each do |user|
+      EmailMatches.invite_email(user).deliver
+    end
+    redirect_to users_path
+  end
 
+  def rsvp
+    # just a route to pair with a view
   end
 
   def confirm_rsvp
     @user = User.find_by_email(params[:email])
 
-    @user.update_attribute(:rsvp, true) if !@user.nil?
+    if !@user.nil?
+      @user.update_attribute(:rsvp, true)
+      EmailMatches.accepted_invite(@user).deliver
+    end
 
     respond_to do |format|
       format.js
@@ -16,11 +26,9 @@ class UsersController < ApplicationController
 
   def match
     ids = User.where(rsvp: true).collect{|u| u.id}
-
     User.all.each do |user|
       user.update_attribute(:user, nil)
     end
-
     User.where(rsvp: true).each do |user|
       user.user = nil
       ids = ids - [user.id]
@@ -29,13 +37,17 @@ class UsersController < ApplicationController
       user.user = User.find(user_id)
       ids = ids - [user_id]
       user.save
-
       if User.where(user_id: user.id).count == 0
         ids << user.id
       end
-
     end
+    redirect_to users_path
+  end
 
+  def send_matches
+    User.where(rsvp: true).each do |user|
+      EmailMatches.send_matches(user).deliver
+    end
     redirect_to users_path
   end
 
