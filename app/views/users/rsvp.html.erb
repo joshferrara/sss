@@ -1,0 +1,17 @@
+<p>Welcome to the Secret Santa Society. You're about to join an elite group of gift givers that common Christmas lovers can only dream about being a part of.</p>
+
+<p>Enter your email address below to accept your invitation and begin your membership in the S3. And remember, we DO NOT talk about S3.</p>
+
+<%= form_tag(confirm_rsvp_path, method: 'get', remote: true) do %>
+  <div class="control-group">
+    <div class="controls">
+      <%= text_field_tag 'email', nil, placeholder: 'Your email address', :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <div class="controls">
+      <%= submit_tag 'Confirm Invitation', class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

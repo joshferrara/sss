@@ -1,0 +1,8 @@
+if (<%= @user.nil? %>){
+
+  $('div.alerts').html("<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert'>×</button><h4>Not so fast</h4>We don't have an outstanding invitation for that email address. Please use the email address where you recieved your invitation.</div>")
+} else if (<%= !@user.nil? %>){
+  $('div.content').slideUp(200, 'swing');
+  $('div.alerts').html("<div class='alert alert-success'><button type='button' class='close' data-dismiss='alert'>×</button><h4>Greetings, <%= @user.first_name unless @user.nil? %></h4>You are now a member of the S3. Keep an eye on your email inbox for more instructions.</div>");
+
+}
