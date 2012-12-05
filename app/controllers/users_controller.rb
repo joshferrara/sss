@@ -14,24 +14,6 @@ class UsersController < ApplicationController
     end
   end
 
-  # def match
-  #   santas = User.all
-  #   receivers = User.all
-  #
-  #   santas.each do |santa|
-  #     receiver = receivers.sample
-  #     santa.user = receiver
-  #     logger.debug santa.id.to_s + " " + receiver.id.to_s
-  #
-  #     redo if santa.id == receiver.id
-  #
-  #     santa.save
-  #     receivers = receivers - [receiver]
-  #   end
-  #
-  #   redirect_to users_path
-  # end
-
   def match
     ids = User.all.collect{|u| u.id}
 
@@ -102,7 +84,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.html { redirect_to users_path, notice: 'User was successfully created.' }
         format.json { render json: @user, status: :created, location: @user }
       else
         format.html { render action: "new" }
@@ -118,7 +100,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html { redirect_to users_path, notice: 'User was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
