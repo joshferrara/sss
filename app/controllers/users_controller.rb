@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
 
+  def invite_user
+    EmailMatches.invite_email(User.find(params[:id])).deliver
+    redirect_to users_path
+  end
+
   def invite_users
     User.all.each do |user|
       EmailMatches.invite_email(user).deliver
