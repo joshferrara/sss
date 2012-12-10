@@ -28,4 +28,4 @@ This matches santas with each other, but only for users that have RSVP’d.
 This sends `/views/email_matches/send_matches.html.erb` to all users that have RSVP’d and received a match.
 
 ### Envelope Button
-This allows you to send the original invite email to an idividual user. Useful if you decide to add a user after you’ve sent the invite to all other users.
+This allows you to send the original invite email to an individual user. Useful if you have a late addtion.
