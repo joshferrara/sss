@@ -12,6 +12,13 @@ class UsersController < ApplicationController
     redirect_to users_path
   end
 
+  def remind_users
+    User.where(rsvp: false).each do |user|
+      EmailMatches.remind_email(user).deliver
+    end
+    redirect_to users_path
+  end
+
   def rsvp
     # just a route to pair with a view
   end

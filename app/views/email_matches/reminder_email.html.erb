@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Greetings, <%= @user.first_name %></h1>
+    <p>This email is here to remind you that you have exactly 12 hours left to accept your invitation to join the Secret Santa Society.</p>
+
+    <p>In case you've misplaced your invitation, here's how it works:</p>
+
+    <ol>
+      <li>If you choose to participate, visit <a href="<%= @url %>"><%= @url %></a> by the end of today — Friday, December 7th — to accept this invitation.</li>
+      <li>At midnight on Friday, December 7th you will receive an email with a Secret Santa match name. This is the person you will be buying a gift for.</li>
+      <li>On Saturday, December 15th the S3 will convene (that means get together for a Christmas party) for our annual gathering at an undisclosed location, and gifts will be exchanged anonymously.</li>
+    </ol>
+
+    <p>As of this email, you have exactly 12 hours remaining before your invitation will expire. Your presence will be missed if you're unable to join us.</p>
+
+    <p>We hope to hear from you soon. Good luck.</p>
+
+    <p>— Josh Ferrara &amp; the S3</p>
+
+  </body>
+</html>

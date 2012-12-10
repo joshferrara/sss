@@ -3,6 +3,7 @@ Sss::Application.routes.draw do
 
   match 'invite_user/:id' => 'users#invite_user', :as => :invite_user
   match 'invite_users' => 'users#invite_users'
+  match 'remind_users' => 'users#remind_users'
   match 'rsvp' => 'users#rsvp'
   match 'confirm_rsvp' => 'users#confirm_rsvp'
   match 'match' => 'users#match'
