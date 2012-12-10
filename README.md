@@ -1,7 +1,7 @@
 Simple Secret Santa
 ===
 
-This is a very basic secret santa engine I threw together for some friends. It’s a basic rails app, so you should be able to fork and run `rails s` with minimal setup.
+This is a very basic secret santa engine I threw together for some friends, complete with (hilarious) Invite, Reminder, and Match emails already written for you. It’s a very basic rails app, so you should be able to fork and run `rails s` with minimal setup.
 
 ## Heroku 
 The app is currently set up for quick deploy to Heroku. Just follow the instructions [here](https://devcenter.heroku.com/articles/rails3) to get running.
