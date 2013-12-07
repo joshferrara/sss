@@ -9,7 +9,7 @@ The app is currently set up for quick deploy to Heroku. Just follow the instruct
 ## Configuration
 You’ll need to add environment variables to Heroku with a Gmail/Google Apps account info in order to send emails via SMTP. The two variables you need to add are `EMAIL_USER` and `EMAIL_PASSWORD`, and once you've got your Heroku app setup, you can set your variables like so:
 
-```
+```bash
 $ heroku config:set EMAIL_USER=john.smith@gmail.com
 Adding config vars and restarting myapp... done, v12
 EMAIL_USER: john.smith@gmail.com
