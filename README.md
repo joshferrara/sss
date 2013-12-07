@@ -7,7 +7,21 @@ This is a very basic secret santa engine I threw together for some friends, comp
 The app is currently set up for quick deploy to Heroku. Just follow the instructions [here](https://devcenter.heroku.com/articles/rails3) to get running.
 
 ## Configuration
-You’ll need to rename `/config/application.example.rb` to `application.rb` and edit that file’s contents with Gmail/Google Apps account info in order to send emails via SMTP.
+You’ll need to add environment variables to Heroku with a Gmail/Google Apps account info in order to send emails via SMTP. The two variables you need to add are `EMAIL_USER` and `EMAIL_PASSWORD`, and once you've got your Heroku app setup, you can set your variables like so:
+
+```
+$ heroku config:set EMAIL_USER=john.smith@gmail.com
+Adding config vars and restarting myapp... done, v12
+EMAIL_USER: john.smith@gmail.com
+
+$ heroku config:set EMAIL_PASSWORD=password123
+Adding config vars and restarting myapp... done, v12
+EMAIL_PASSWORD: password123
+
+$ heroku config
+EMAIL_USER:     john.smith@gmail.com
+EMAIL_PASSWORD: password123
+```
 
 ## User Management
 Once the app is running, the list of users is available at `/users`, and isn’t protected by auth. I’m assuming your friends aren’t devs that’ll go snooping around. :)
