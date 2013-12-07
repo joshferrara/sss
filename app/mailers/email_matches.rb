@@ -8,7 +8,7 @@ class EmailMatches < ActionMailer::Base
     mail(:to => user.email, :subject => "A Christmas offer you can't refuse.")
   end
 
-  def remind_email(user)
+  def reminder_email(user)
     @user = user
     @url  = "http://sssanta.com"
     mail(:to => user.email, :subject => "Reminder: A Christmas offer you can't refuse.")
