@@ -44,7 +44,7 @@
           <%= link_to edit_user_path(user), class: "btn" do %>
             <i class="icon-pencil"></i>
           <% end %>
-          <%= link_to user_path(user), method: :destroy, class: "btn btn-danger" do %>
+          <%= link_to user_path(user), method: :delete, confirm: "Are you sure you want to delete " + user.first_name + "?", class: "btn btn-danger" do %>
             <i class="icon-trash"></i>
           <% end %>
 
